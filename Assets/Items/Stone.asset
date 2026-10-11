@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101c12fbc62945b4ebd0d67453203e86, type: 3}
+  m_Name: Stone
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDefinition
+  displayName: Stone
+  gridSize: {x: 1, y: 1}
+  equipSlot: 0
+  rarity: 0
+  icon: {fileID: 10912, guid: 0000000000000000f000000000000000, type: 0}
+  tint: {r: 0.6, g: 0.6, b: 0.62, a: 1}
+  groundPrefab: {fileID: 395379675880116047, guid: 4c18ae20c9f7b124b9d5720a5bf0f461, type: 3}

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1259321496354521176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217785200600012638}
+  - component: {fileID: 6293618271408102795}
+  m_Layer: 0
+  m_Name: Grass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1217785200600012638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259321496354521176}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6293618271408102795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259321496354521176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768321b114fbcfd428bfe7503fed8da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GrassRenderer
+  terrain: {fileID: 0}
+  scatterCompute: {fileID: 7200000, guid: cedcf5d39e665154d977c8119076f7c6, type: 3}
+  grassMaterial: {fileID: 2100000, guid: 8b03ffd35dd2db247be64e3cf1e19eb8, type: 2}
+  targetCamera: {fileID: 0}
+  restrictToGroundMoss: 1
+  groundMossThreshold: 0.5
+  groundMossFeather: 0.15
+  benderLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  maxBenderRadius: 2
+  benderVerticalRange: 3
+  groundContactTolerance: 0.15
+  bendRecoveryDuration: 0.5
+  bendMapResolution: 1024
+  grassBlockerLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  blockerGroundClearance: 0
+  logDiagnosticsOnStart: 0

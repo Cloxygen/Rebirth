@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 321b3db22f984bdaa66a3e8606a3024b, type: 3}
+  m_Name: ComboSwing
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  repeatsWhileHeld: 1
+  movementSpeedMultiplier: 0
+  aimsAtCursor: 1
+  indicatorPrefab: {fileID: 0}
+  icon: {fileID: 0}
+  turnDuration: 0.12
+  knockbackDistance: 1.5
+  hitboxSize: {x: 1.2, y: 1.5, z: 1}
+  hitboxForwardOffset: 1
+  windupColor: {r: 1, g: 0.85, b: 0.4, a: 0.16}
+  hitboxColor: {r: 1, g: 0, b: 0, a: 0.35}
+  swings:
+  - damageMultiplier: 0.75
+    swingArcDegrees: 90
+    swingDirection: 1
+    windupDuration: 0.3
+    swingDuration: 0.2
+    lungeDistance: 0.25
+    recoveryDuration: 0.3
+  - damageMultiplier: 0.9
+    swingArcDegrees: 100
+    swingDirection: -1
+    windupDuration: 0.3
+    swingDuration: 0.2
+    lungeDistance: 0.25
+    recoveryDuration: 0.3
+  - damageMultiplier: 1.5
+    swingArcDegrees: 0
+    swingDirection: 1
+    windupDuration: 0.3
+    swingDuration: 0.2
+    lungeDistance: 0.5
+    recoveryDuration: 0.4
+  comboWindow: 0.6

@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/theme.uss?fileID=7433441132597879392&amp;guid=55c7530cc955efd4c9d982b6aa2cdf56&amp;type=3#theme"/>
+    <Style src="LoginBox.uss"/>
+    <ui:VisualElement name="login-screen" class="login-screen" picking-mode="Ignore">
+        <ui:VisualElement name="login" class="login">
+            <ui:Label text="REBIRTH" class="login-title"/>
+            <ui:Label text="Name" class="login-caption"/>
+            <ui:TextField name="login-name" class="login-field" multiline="false" max-length="32"/>
+            <ui:Label text="Password" class="login-caption"/>
+            <ui:TextField name="login-password" class="login-field" multiline="false" password="true"/>
+            <ui:Label name="login-reason" class="login-reason"/>
+            <ui:VisualElement class="login-buttons">
+                <ui:Button name="login-host" text="Host" class="login-button"/>
+                <ui:Button name="login-join" text="Join" class="login-button"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

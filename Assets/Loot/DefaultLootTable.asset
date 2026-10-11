@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7bd70a7cbe29d42b7ffaba1bcafa1d, type: 3}
+  m_Name: DefaultLootTable
+  m_EditorClassIdentifier: Assembly-CSharp::LootTable
+  essenceMotePrefab: {fileID: 4958520050298827102, guid: 76cd64f42b03a7847947d849e8635917, type: 3}
+  minEssence: 1
+  maxEssence: 3
+  items:
+  - item: {fileID: 11400000, guid: 4d8b1832b0e6da84c8c850a0ec356eb5, type: 2}
+    chance: 1
+    minCount: 1
+    maxCount: 3
+  - item: {fileID: 11400000, guid: 209f17bce6c9bee4381496a6f970283d, type: 2}
+    chance: 1
+    minCount: 1
+    maxCount: 3
+  scatterRadius: 0.5

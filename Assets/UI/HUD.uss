@@ -1,0 +1,2154 @@
+
+.hud {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.hud-bottom {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.center-column {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    translate: -50% 0;
+    transform-origin: center bottom;
+    flex-direction: column;
+    align-items: center;
+}
+
+.globe-ring-edge {
+    position: absolute;
+    left: -9.9px;
+    top: -9.9px;
+    width: 138.6px;
+    height: 138.6px;
+    border-top-left-radius: 69.3px;
+    border-top-right-radius: 69.3px;
+    border-bottom-left-radius: 69.3px;
+    border-bottom-right-radius: 69.3px;
+    border-top-width: 1.1px;
+    border-right-width: 1.1px;
+    border-bottom-width: 1.1px;
+    border-left-width: 1.1px;
+    border-top-color: var(--metal);
+    border-right-color: var(--metal);
+    border-bottom-color: var(--metal);
+    border-left-color: var(--metal);
+}
+
+.globe-val {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: space-around;
+    text-shadow: 0 2.2px 3.85px rgba(0, 0, 0, 1);
+}
+
+.globe-num {
+    font-size: 25.3px;
+    -unity-font-definition: url("project://database/Assets/Fonts/TeX%20Gyre%20Pagella%20SDF.asset?fileID=11400000&guid=1fd5e97170156ac4dac31725d9fb3f22&type=2#TeX%20Gyre%20Pagella%20SDF");
+    -unity-font-style: bold;
+    color: var(--ink);
+    -unity-text-align: middle-center;
+    margin: 0;
+    padding: 0;
+}
+
+.globe-label {
+    font-size: 10.67px;
+    letter-spacing: 25px;
+    color: rgba(255, 255, 255, 0.7);
+    -unity-text-align: middle-center;
+    padding: 0;
+    margin: 0;
+}
+
+.globe {
+    position: absolute;
+    bottom: 3%;
+    width: 118.8px;
+    height: 118.8px;
+    justify-content: center;
+    align-items: center;
+}
+.globe.hp {
+    right: 50%;
+    margin-right: 260.7px;
+    transform-origin: right bottom;
+}
+.globe.rs {
+    left: 50%;
+    margin-left: 260.7px;
+    transform-origin: left bottom;
+}
+
+.globe-shadow {
+    position: absolute;
+    left: -44px;
+    top: -44px;
+    right: -44px;
+    bottom: -44px;
+    --radius: 59.4;
+    --pad: 44;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 7.92;
+    --shadow-blur: 19.8;
+    --shadow-color: #00000099;
+}
+
+.globe-ring-dark {
+    position: absolute;
+    left: -8.8px;
+    top: -8.8px;
+    width: 136.4px;
+    height: 136.4px;
+    border-top-left-radius: 68.2px;
+    border-top-right-radius: 68.2px;
+    border-bottom-left-radius: 68.2px;
+    border-bottom-right-radius: 68.2px;
+    border-top-width: 8.8px;
+    border-right-width: 8.8px;
+    border-bottom-width: 8.8px;
+    border-left-width: 8.8px;
+    border-color: var(--metal-lo);
+}
+.globe-ring-black {
+    position: absolute;
+    left: -3.96px;
+    top: -3.96px;
+    width: 126.72px;
+    height: 126.72px;
+    border-top-left-radius: 63.36px;
+    border-top-right-radius: 63.36px;
+    border-bottom-left-radius: 63.36px;
+    border-bottom-right-radius: 63.36px;
+    border-top-width: 5.06px;
+    border-right-width: 5.06px;
+    border-bottom-width: 5.06px;
+    border-left-width: 5.06px;
+    border-color: #0c0a10;
+}
+
+.globe-clip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 59.4px;
+    border-top-right-radius: 59.4px;
+    border-bottom-left-radius: 59.4px;
+    border-bottom-right-radius: 59.4px;
+    --fill-mode: 0;
+    --fill-a: #000000bf;
+    --clip-radius: 59.4;
+}
+
+.globe-well-shade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    --radius: 59.4;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --inset-y: 0;
+    --inset-blur: 23.76;
+    --inset-color: #000000e6;
+}
+
+.liquid,
+.liquid-trail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    --radius: 59.4;
+    --fill-mode: 1;
+    --gradient-angle: 90;
+}
+.liquid {
+    --swirl-on: 0;
+    --swirl-strength: 0.6;
+    --swirl-scale: 3;
+    --swirl-speed: 7;
+    --swirl-parallax: 0.8;
+    --swirl-spherical: 1;
+    --swirl-latitude: 0.7;
+    --swirl-warp: 0.45;
+    --rim-strength: 0.55;
+    --rim-width: 15;
+    --surface-strength: 0.9;
+    --surface-width: 3.5;
+}
+
+.globe.hp .liquid {
+    --level: 0.78;
+    --fill-a: #e7414a;
+    --fill-b: #b01820;
+    --gradient-start: 0;
+    --gradient-end: 0.32;
+    --ov1-mode: 1;
+    --ov1-a: #4d070c00;
+    --ov1-b: #4d070cff;
+    --ov1-angle: 90;
+    --ov1-start: 0.32;
+    --ov1-end: 1;
+}
+.globe.rs .liquid {
+    --level: 0.55;
+    --fill-a: #57b6f2;
+    --fill-b: #1f6fc4;
+    --gradient-start: 0;
+    --gradient-end: 0.34;
+    --ov1-mode: 1;
+    --ov1-a: #0a254900;
+    --ov1-b: #0a2549ff;
+    --ov1-angle: 90;
+    --ov1-start: 0.34;
+    --ov1-end: 1;
+}
+.globe.hp .liquid-trail {
+    --level: 0.78;
+    --fill-a: #96141b;
+    --fill-b: #4d070c;
+}
+.globe.rs .liquid-trail {
+    --level: 0.55;
+    --fill-a: #1a5ea7;
+    --fill-b: #0a2549;
+}
+
+.globe-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    --radius: 59.4;
+    --fill-mode: 2;
+    --fill-a: #00000000;
+    --fill-b: #00000073;
+    --gradient-center-x: 0.5;
+    --gradient-center-y: 0.5;
+    --gradient-radius-x: 0.9;
+    --gradient-radius-y: 0.9;
+    --gradient-start: 0.62;
+    --gradient-end: 1;
+    --ov1-mode: 2;
+    --ov1-a: #00000000;
+    --ov1-b: #0000008c;
+    --ov1-center-x: 0.5;
+    --ov1-center-y: 1.18;
+    --ov1-radius-x: 1.2;
+    --ov1-radius-y: 1.2;
+    --ov1-start: 0.55;
+    --ov1-end: 1;
+    --ov2-mode: 2;
+    --ov2-a: #ffffff4a;
+    --ov2-b: #ffffff00;
+    --ov2-center-x: 0.5;
+    --ov2-center-y: 0.14;
+    --ov2-radius-x: 0.46;
+    --ov2-radius-y: 0.3;
+    --ov2-start: 0;
+    --ov2-end: 0.7;
+}
+
+.plate-shadow {
+    position: absolute;
+    left: -20.9px;
+    top: -20.9px;
+    right: -20.9px;
+    bottom: -20.9px;
+    --radius: 6.6;
+    --pad: 20.9;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 3.3;
+    --shadow-blur: 9.9;
+    --shadow-color: #00000066;
+}
+
+.plate-tracery {
+    position: absolute;
+    left: 1.76px; top: 1.76px; right: 1.76px; bottom: 1.76px;
+}
+
+.plate-inlay {
+    position: absolute;
+    left: 22%; right: 22%;
+    top: 1.65px;
+    height: 1.1px;
+    --fill-mode: 2;
+    --fill-a: #eeba4d42;
+    --fill-b: #eeba4d00;
+    --gradient-center-x: 0.5; --gradient-center-y: 0.5;
+    --gradient-radius-x: 0.5; --gradient-radius-y: 100;
+    --gradient-start: 0; --gradient-end: 1;
+}
+
+.quest-tracker {
+    position: absolute;
+    right: 1.6875%;
+    top: 3%;
+    margin-top: 216px;
+    width: 286px;
+}
+
+.q-shadow {
+    --shadow-y: 4.4;
+    --shadow-blur: 13.2;
+    --shadow-color: #00000085;
+}
+
+.q-spine {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2.2px;
+    --fill-mode: 0;
+    --fill-a: #8a6412;
+    --radius: 0;
+}
+
+.quests {
+    padding-top: 7.7px;
+    padding-bottom: 9.9px;
+    padding-left: 9.9px;
+    padding-right: 11px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    --fill-mode: 1; --fill-a: #c3b088f7; --fill-b: #8f856059; --gradient-angle: 180;
+    --gradient-start: 0.5; --gradient-end: 1;
+
+    --ov1-mode: 2; --ov1-a: #8f856000; --ov1-b: #8f85604d;
+    --ov1-center-x: 0.5; --ov1-center-y: 0.5; --ov1-radius-x: 0.6; --ov1-radius-y: 0.6;
+    --ov1-start: 0.3; --ov1-end: 1;
+
+    --ov2-mode: 2; --ov2-a: #fdfaf038; --ov2-b: #fdfaf000;
+    --ov2-center-x: 0.66; --ov2-center-y: 0.3; --ov2-radius-x: 0.72; --ov2-radius-y: 0.95;
+    --ov2-start: 0; --ov2-end: 1;
+
+    --inset-y: 1.1; --inset-blur: 0; --inset-spread: 0; --inset-color: #fdfaf040;
+    --inset2-y: 0; --inset2-blur: 13.2; --inset2-spread: 0; --inset2-color: #5c4a2180;
+}
+
+.q-head {
+    margin-bottom: 11px;
+}
+
+.q-rule {
+    height: 1.1px;
+    --fill-mode: 1;
+    --fill-a: #000000bf;
+    --fill-b: #00000000;
+    --gradient-angle: 0;
+    --gradient-start: 0;
+    --gradient-end: 1;
+}
+
+.q-title {
+    font-size: 19.8px;
+    -unity-font-definition: url("project://database/Assets/Fonts/TeX%20Gyre%20Pagella%20SDF.asset?fileID=11400000&guid=1fd5e97170156ac4dac31725d9fb3f22&type=2#TeX%20Gyre%20Pagella%20SDF");
+    -unity-font-style: bold;
+    letter-spacing: 1.76px;
+    color: #000000;
+    text-shadow: 0 1.1px 0 rgba(0, 0, 0, 0);
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgba(0, 0, 0, 0.95);
+    margin: 0;
+    margin-bottom: 6.6px;
+    padding: 0;
+}
+
+.q-obj {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 7.7px;
+}
+
+.q-obj-last {
+    margin-bottom: 0;
+}
+
+.q-mark {
+    width: 4.4px;
+    height: 4.4px;
+    flex-shrink: 0;
+    margin-right: 9.9px;
+    rotate: 45deg;
+    --fill-mode: 0;
+    --fill-a: #000000;
+}
+
+.q-done .q-mark {
+    --fill-a: #8a6412;
+}
+
+.q-text {
+    flex-shrink: 1;
+    font-size: 13.75px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    letter-spacing: 0.41px;
+    color: #000000;
+    text-shadow: 0 1.1px 0 rgba(0, 0, 0, 0);
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgba(0, 0, 0, 0.95);
+    margin: 0;
+    padding: 0;
+}
+
+.q-count {
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 13.2px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    -unity-font-style: bold;
+    letter-spacing: 0.41px;
+    color: #000000;
+    text-shadow: 0 1.1px 0 rgba(0, 0, 0, 0);
+    -unity-text-outline-width: 0;
+    -unity-text-outline-color: rgba(0, 0, 0, 0.95);
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    padding: 0;
+}
+
+.q-done .q-text {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.q-strike-wrap {
+    flex-shrink: 1;
+    flex-direction: row;
+}
+
+.q-strike {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1.1px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.chat {
+    position: absolute;
+    left: 1.6875%;
+    bottom: 3%;
+    margin-bottom: 110px;
+    width: 360px;
+    flex-direction: column;
+}
+
+.chat-tabs {
+    flex-direction: row;
+    align-items: flex-end;
+    height: 17.6px;
+}
+
+.chat-tab {
+    height: 17.6px;
+    padding-left: 8.8px;
+    padding-right: 8.8px;
+    margin-right: 2.2px;
+    -unity-text-align: middle-center;
+    font-size: 9.9px;
+    letter-spacing: 0.6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    color: #8a7a5c;
+    background-color: rgba(8, 7, 11, 0.55);
+    border-top-left-radius: 3.3px;
+    border-top-right-radius: 3.3px;
+    border-top-width: 1.1px;
+    border-left-width: 1.1px;
+    border-right-width: 1.1px;
+    border-top-color: rgba(74, 63, 43, 0.5);
+    border-left-color: rgba(74, 63, 43, 0.5);
+    border-right-color: rgba(74, 63, 43, 0.5);
+}
+
+.chat-tab-active {
+    color: #efe7d6;
+    background-color: rgba(20, 17, 25, 0.86);
+    border-top-color: rgba(74, 63, 43, 0.95);
+    border-left-color: rgba(74, 63, 43, 0.95);
+    border-right-color: rgba(74, 63, 43, 0.95);
+}
+
+.chat-panel {
+    height: 176px;
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
+    padding-left: 8.8px;
+    padding-right: 3.3px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 3.3px;
+    border-bottom-left-radius: 3.3px;
+    border-bottom-right-radius: 3.3px;
+    --fill-mode: 1;
+    --fill-a: #14111990;
+    --fill-b: #0b0a0eb8;
+    --gradient-angle: 90;
+    border-top-width: 1.1px; border-right-width: 1.1px;
+    border-bottom-width: 1.1px; border-left-width: 1.1px;
+    border-top-color: rgba(74, 63, 43, 0.85); border-right-color: rgba(74, 63, 43, 0.85);
+    border-bottom-color: rgba(74, 63, 43, 0.85); border-left-color: rgba(74, 63, 43, 0.85);
+}
+
+.chat-feed {
+    flex-grow: 1;
+}
+
+.chat-feed .unity-scroll-view__content-container {
+    min-height: 100%;
+    justify-content: flex-end;
+}
+
+.chat-feed .unity-scroller--vertical {
+    width: 6.6px;
+    opacity: 1;
+    background-color: rgba(6, 5, 9, 0.5);
+}
+
+.chat-feed .unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;
+}
+
+.chat-feed .unity-scroller--vertical .unity-base-slider__dragger {
+    width: 4.4px;
+    margin-left: 1.1px;
+    border-top-left-radius: 2.2px; border-top-right-radius: 2.2px;
+    border-bottom-left-radius: 2.2px; border-bottom-right-radius: 2.2px;
+    background-color: rgba(138, 122, 92, 0.75);
+    border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;
+}
+
+.chat-feed .unity-scroller--vertical .unity-repeat-button {
+    display: none;
+    height: 0;
+    min-height: 0;
+    width: 0;
+    min-width: 0;
+    margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+    border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;
+}
+
+.chat-feed .unity-scroller--vertical .unity-scroller__slider {
+    flex-grow: 1;
+    width: 100%;
+    min-width: 0;
+    margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+}
+
+.chat-feed .unity-scroller--vertical .unity-base-slider__input {
+    margin-top: 0; margin-bottom: 0;
+    padding-top: 0; padding-bottom: 0;
+}
+
+.chat-feed .unity-scroller--vertical .unity-base-slider__drag-container {
+    margin-top: 0; margin-bottom: 0;
+    padding-top: 0; padding-bottom: 0;
+    min-height: 0;
+}
+
+.chat-line {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 1.65px;
+}
+
+.chat-time {
+    flex-shrink: 0;
+    margin-right: 4.4px;
+    font-size: 11px;
+    color: rgba(156, 148, 132, 0.75);
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+}
+
+.chat-text {
+    flex-shrink: 1;
+    flex-grow: 1;
+    white-space: normal;
+    font-size: 11px;
+    color: #efe7d6;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    text-shadow: 0 1.1px 1.65px rgba(0, 0, 0, 0.9);
+}
+
+.chat-entry {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    align-items: center;
+    height: 20.9px;
+    margin-top: 2.2px;
+    padding-left: 6.6px;
+    padding-right: 6.6px;
+    border-top-left-radius: 3.3px; border-top-right-radius: 3.3px;
+    border-bottom-left-radius: 3.3px; border-bottom-right-radius: 3.3px;
+    --fill-mode: 1;
+    --fill-a: #1a1622e6;
+    --fill-b: #100d16f2;
+    --gradient-angle: 90;
+    border-top-width: 1.1px; border-right-width: 1.1px;
+    border-bottom-width: 1.1px; border-left-width: 1.1px;
+    border-top-color: #eeba4d; border-right-color: #eeba4d;
+    border-bottom-color: #eeba4d; border-left-color: #eeba4d;
+}
+
+.chat-chip {
+    flex-shrink: 0;
+    margin-right: 5.5px;
+    -unity-text-align: middle-left;
+    font-size: 11px;
+    color: #eeba4d;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+}
+
+.chat-input {
+    flex-grow: 1;
+    margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+}
+
+.chat-input .unity-base-text-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;
+    padding-top: 0; padding-bottom: 0; padding-left: 0; padding-right: 0;
+    -unity-text-align: middle-left;
+    font-size: 11px;
+    color: #efe7d6;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+}
+
+.menu {
+    position: absolute;
+    right: 1.6875%;
+    bottom: 3%;
+    transform-origin: right bottom;
+    flex-direction: row;
+}
+
+.mbtn {
+    width: 25.3px;
+    height: 25.3px;
+    margin-right: 9.46px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.mbtn-last {
+    margin-right: 0;
+}
+
+.mbtn-art {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-size: cover;
+    -unity-background-image-tint-color: var(--metal-hi);
+    transition-property: -unity-background-image-tint-color, translate, scale;
+    transition-duration: 0.12s;
+}
+
+.mbtn-art-shadow {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-size: cover;
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0.85);
+    translate: 0 2.42px;
+    transition-property: -unity-background-image-tint-color, translate, scale;
+    transition-duration: 0.12s;
+}
+
+.mbtn-inventory .mbtn-art, .mbtn-inventory .mbtn-art-shadow {
+    background-image: url("../Textures/UI/menu/menu_inventory.png");
+}
+.mbtn-character .mbtn-art, .mbtn-character .mbtn-art-shadow {
+    background-image: url("../Textures/UI/menu/menu_character.png");
+}
+.mbtn-skills .mbtn-art, .mbtn-skills .mbtn-art-shadow {
+    background-image: url("../Textures/UI/menu/menu_skills.png");
+}
+.mbtn-talents .mbtn-art, .mbtn-talents .mbtn-art-shadow {
+    background-image: url("../Textures/UI/menu/menu_talents.png");
+}
+.mbtn-questlog .mbtn-art, .mbtn-questlog .mbtn-art-shadow {
+    background-image: url("../Textures/UI/menu/menu_questlog.png");
+}
+.mbtn-system .mbtn-art, .mbtn-system .mbtn-art-shadow {
+    background-image: url("../Textures/UI/menu/menu_system.png");
+}
+
+.mbtn:hover .mbtn-art {
+    -unity-background-image-tint-color: #f4dcaa;
+    translate: 0 -3.19px;
+    scale: 1.08;
+}
+.mbtn:hover .mbtn-art-shadow {
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0.7);
+    translate: 0 0.77px;
+    scale: 1.08;
+}
+
+.mbtn-tip {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 6.38px;
+    left: 50%;
+    translate: -50% 0;
+    padding-top: 2.42px; padding-bottom: 2.42px;
+    padding-left: 5.5px; padding-right: 5.5px;
+    border-top-left-radius: 3.3px; border-top-right-radius: 3.3px;
+    border-bottom-left-radius: 3.3px; border-bottom-right-radius: 3.3px;
+    background-color: rgba(8, 7, 11, 0.95);
+    border-top-width: 1.1px; border-right-width: 1.1px;
+    border-bottom-width: 1.1px; border-left-width: 1.1px;
+    border-top-color: var(--metal-line); border-right-color: var(--metal-line);
+    border-bottom-color: var(--metal-line); border-left-color: var(--metal-line);
+    font-size: 9.9px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    letter-spacing: 1.58px;
+    color: var(--ink);
+    white-space: nowrap;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.12s;
+    margin-top: 0; margin-left: 0; margin-right: 0;
+}
+
+.mbtn:hover .mbtn-tip {
+    opacity: 1;
+}
+
+.accent-rule {
+    height: 1px;
+    --fill-mode: 2;
+    --fill-a: #c3b088;
+    --fill-b: #c3b08800;
+    --gradient-center-x: 0.5; --gradient-center-y: 0.5;
+    --gradient-radius-x: 0.5; --gradient-radius-y: 100;
+    --gradient-start: 0.6; --gradient-end: 1;
+}
+
+.accent-diamond {
+    width: 4.4px;
+    height: 4.4px;
+    translate: -50% 0;
+    rotate: 45deg;
+    --fill-mode: 0;
+    --fill-a: #c3b088;
+}
+
+.menu-rule {
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    top: -6.6px;
+}
+
+.menu-diamond {
+    position: absolute;
+    left: 50%;
+    top: -8.8px;
+}
+
+.orn-taper {
+    flex-shrink: 0;
+    width: 36px;
+    height: 1px;
+    --fill-mode: 1;
+    --fill-a: #c3b088;
+    --fill-b: #c3b08800;
+    --gradient-start: 0;
+    --gradient-end: 1;
+}
+
+.orn-taper-l { margin-right: 6.6px; --gradient-angle: 180; }
+.orn-taper-r { margin-left: 6.6px; --gradient-angle: 0; }
+
+.toprow {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8.69px;
+}
+
+.essence {
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+.ess-orb {
+    position: relative;
+    width: 19.47px;
+    height: 19.47px;
+    flex-shrink: 0;
+    margin-right: 6.38px;
+    translate: 0 -2.2px;
+}
+
+.ess-orb-shadow {
+    position: absolute;
+    left: -8.8px;
+    top: -8.8px;
+    right: -8.8px;
+    bottom: -8.8px;
+    --radius: 10.29;
+    --pad: 8.8;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 2.42;
+    --shadow-blur: 2.75;
+    --shadow-color: #000000d9;
+}
+
+.ess-orb-glow {
+    position: absolute;
+    left: -22px;
+    top: -22px;
+    right: -22px;
+    bottom: -22px;
+    --radius: 10.29;
+    --pad: 22;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 0;
+    --shadow-blur: 8.8;
+    --shadow-color: #d8cfa626;
+}
+
+.ess-orb-face {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 10.29px;
+    border-top-right-radius: 10.29px;
+    border-bottom-left-radius: 10.29px;
+    border-bottom-right-radius: 10.29px;
+    --fill-mode: 2;
+    --fill-a: #fdfaf0;
+    --fill-b: #d8cfa6;
+    --gradient-center-x: 0.4;
+    --gradient-center-y: 0.32;
+    --gradient-radius-x: 0.6;
+    --gradient-radius-y: 0.6;
+    --gradient-start: 0;
+    --gradient-end: 0.55;
+    --ov1-mode: 2;
+    --ov1-a: #8f856000;
+    --ov1-b: #8f8560ff;
+    --ov1-center-x: 0.4;
+    --ov1-center-y: 0.32;
+    --ov1-radius-x: 0.6;
+    --ov1-radius-y: 0.6;
+    --ov1-start: 0.55;
+    --ov1-end: 1;
+    --inset-y: -2.42;
+    --inset-blur: 2.42;
+    --inset-color: #00000033;
+}
+
+.ess-art {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../Textures/UI/ess_star.png");
+    background-size: cover;
+    -unity-background-image-tint-color: var(--ess-lo);
+}
+
+.ess-amount {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 18.15px;
+    -unity-font-definition: url("project://database/Assets/Fonts/TeX%20Gyre%20Pagella%20SDF.asset?fileID=11400000&guid=1fd5e97170156ac4dac31725d9fb3f22&type=2#TeX%20Gyre%20Pagella%20SDF");
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    letter-spacing: 0.33px;
+    color: var(--ess);
+    text-shadow: 0 3.3px 4.4px rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 0;
+}
+
+.effects {
+    flex-direction: row;
+    align-items: center;
+}
+
+.effect-row {
+    flex-direction: row;
+}
+
+.eff-divider {
+    width: 2.2px;
+    min-width: 2.2px;
+    flex-shrink: 0;
+    height: 23.76px;
+    margin-left: 2.64px;
+    margin-right: 6.6px;
+    background-color: #8a7a5c;
+}
+
+.eff {
+    width: 25.3px;
+    height: 25.3px;
+    margin-right: 3.96px;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 3.3px; border-top-right-radius: 3.3px;
+    border-bottom-left-radius: 3.3px; border-bottom-right-radius: 3.3px;
+    border-top-width: 1.1px; border-right-width: 1.1px; border-bottom-width: 1.1px; border-left-width: 1.1px;
+    --fill-mode: 1; --fill-a: #201c26; --fill-b: #0c0a10; --gradient-angle: 90;
+    --inset-y: 0; --inset-blur: 7.92; --inset-color: #00000099;
+}
+
+.eff.buff {
+    border-top-color: var(--buff); border-right-color: var(--buff);
+    border-bottom-color: var(--buff); border-left-color: var(--buff);
+}
+
+.eff.debuff {
+    border-top-color: var(--debuff); border-right-color: var(--debuff);
+    border-bottom-color: var(--debuff); border-left-color: var(--debuff);
+}
+
+.eff.debuff.poison {
+    border-top-color: var(--buff); border-right-color: var(--buff);
+    border-bottom-color: var(--buff); border-left-color: var(--buff);
+}
+
+.eff.debuff.bleed {
+    border-top-color: var(--hex); border-right-color: var(--hex);
+    border-bottom-color: var(--hex); border-left-color: var(--hex);
+}
+
+.eff-drain {
+    position: absolute;
+    left: -1.1px; top: -1.1px; right: -1.1px; bottom: -1.1px;
+    border-top-left-radius: 3.3px; border-top-right-radius: 3.3px;
+    border-bottom-left-radius: 3.3px; border-bottom-right-radius: 3.3px;
+    --radius: 3.3;
+    --fill-mode: 0;
+    --fill-a: #000000cc;
+}
+
+.drain-40  { --sweep: 0.1111; }
+.drain-120 { --sweep: 0.3333; }
+.drain-220 { --sweep: 0.6111; }
+.drain-300 { --sweep: 0.8333; }
+
+.eff-timer {
+    position: absolute;
+    bottom: -3.19px;
+    right: -1.54px;
+    font-size: 8.69px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    -unity-font-style: bold;
+    -unity-text-align: middle-right;
+    color: #ffffff;
+    -unity-text-outline-width: 0.77px;
+    -unity-text-outline-color: rgba(0, 0, 0, 1);
+    text-shadow: 0 1.1px 2.2px rgba(0, 0, 0, 1);
+    margin: 0;
+    padding: 0;
+}
+
+.eff-icon {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    font-size: 13.42px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    -unity-text-align: middle-center;
+    color: var(--ink);
+    margin: 0;
+    padding: 0;
+}
+
+.eff-art {
+    position: absolute;
+    left: 1.1px; top: 1.1px; right: 1.1px; bottom: 1.1px;
+    border-top-left-radius: 2.2px; border-top-right-radius: 2.2px;
+    border-bottom-left-radius: 2.2px; border-bottom-right-radius: 2.2px;
+    background-size: cover;
+    display: none;
+}
+
+.actionbar {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 7.92px; padding-bottom: 7.92px;
+    padding-left: 4.35px; padding-right: 4.35px;
+    border-top-left-radius: 6.6px;
+    border-top-right-radius: 6.6px;
+    border-bottom-left-radius: 6.6px;
+    border-bottom-right-radius: 6.6px;
+    --fill-mode: 1; --fill-a: #2a2318; --fill-b: #141009; --gradient-angle: 90;
+    --ov1-mode: 2; --ov1-a: #00000000; --ov1-b: #00000073;
+    --ov1-center-x: 0.5; --ov1-center-y: 1.2; --ov1-radius-x: 1.2; --ov1-radius-y: 1.2;
+    --ov1-start: 0.45; --ov1-end: 1;
+    --ov2-mode: 2; --ov2-a: #ffffff0d; --ov2-b: #ffffff00;
+    --ov2-center-x: 0.5; --ov2-center-y: 0.18; --ov2-radius-x: 0.6; --ov2-radius-y: 0.8;
+    --ov2-start: 0; --ov2-end: 0.6;
+    --inset-y: 1.1; --inset-blur: 0; --inset-spread: 0; --inset-color: #ffffff0f;
+    --inset2-y: 0; --inset2-blur: 11.09; --inset2-spread: 0; --inset2-color: #00000099;
+    border-top-width: 1.1px; border-right-width: 1.1px; border-bottom-width: 1.1px; border-left-width: 1.1px;
+    border-top-color: var(--metal-line); border-right-color: var(--metal-line);
+    border-bottom-color: var(--metal-line); border-left-color: var(--metal-line);
+}
+
+.actionbar-shadow {
+    position: absolute;
+    left: -24.2px;
+    right: -24.2px;
+    bottom: -24.2px;
+    height: 117.04px;
+    --radius: 6.6;
+    --pad: 24.2;
+    --fill-mode: 0; --fill-a: #00000000;
+    --shadow-y: 4.75; --shadow-blur: 11.09; --shadow-color: #00000080;
+}
+
+.bar-inlay-frame {
+    position: absolute;
+    left: 1.76px; top: 1.76px; right: 1.76px; bottom: 1.76px;
+    border-top-left-radius: 4.4px; border-top-right-radius: 4.4px;
+    border-bottom-left-radius: 4.4px; border-bottom-right-radius: 4.4px;
+    border-top-width: 1.1px; border-right-width: 1.1px;
+    border-bottom-width: 1.1px; border-left-width: 1.1px;
+    border-top-color: #c3b08812; border-right-color: #c3b08812;
+    border-bottom-color: #c3b08812; border-left-color: #c3b08812;
+}
+
+.bar-tracery {
+    position: absolute;
+    left: 1.76px; top: 1.76px; right: 1.76px; bottom: 1.76px;
+}
+
+.tr-arm {
+    position: absolute;
+    --fill-mode: 1;
+    --fill-a: #c3b0884d;
+    --fill-b: #c3b08800;
+    --gradient-start: 0;
+    --gradient-end: 1;
+}
+
+.tr-h { width: 9.9px; height: 1.1px; }
+.tr-v { width: 1.1px; height: 9.9px; }
+.tr-l { left: 0; }
+.tr-r { right: 0; }
+.tr-t { top: 0; }
+.tr-b { bottom: 0; }
+
+.tr-h.tr-l { --gradient-angle: 0; }
+.tr-h.tr-r { --gradient-angle: 180; }
+.tr-v.tr-t { --gradient-angle: 90; }
+.tr-v.tr-b { --gradient-angle: 270; }
+
+.bar-inlay {
+    position: absolute;
+    left: 16%; right: 16%;
+    top: 1.65px;
+    height: 1.1px;
+    --fill-mode: 2;
+    --fill-a: #eeba4d42;
+    --fill-b: #eeba4d00;
+    --gradient-center-x: 0.5; --gradient-center-y: 0.5;
+    --gradient-radius-x: 0.5; --gradient-radius-y: 100;
+    --gradient-start: 0; --gradient-end: 1;
+}
+
+.slot {
+    width: 50.6px;
+    height: 50.6px;
+    margin-left: 3.58px; margin-right: 3.58px;
+    align-items: center;
+    justify-content: center;
+}
+
+.slot-rim {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    translate: 0 1%;
+    border-top-left-radius: 5.5px; border-top-right-radius: 5.5px;
+    border-bottom-left-radius: 5.5px; border-bottom-right-radius: 5.5px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.slot-fill {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border-top-left-radius: 5.5px; border-top-right-radius: 5.5px;
+    border-bottom-left-radius: 5.5px; border-bottom-right-radius: 5.5px;
+    --fill-mode: 1; --fill-a: #141009; --fill-b: #2a2318; --gradient-angle: 90;
+}
+
+.slot-key {
+    position: absolute;
+    top: 2.2px;
+    left: 2.2px;
+    min-width: 13.2px;
+    font-size: 10.67px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    color: var(--ink);
+    -unity-text-outline-width: 0.88px;
+    -unity-text-outline-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(8, 6, 4, 0.72);
+    border-top-left-radius: 3.3px; border-top-right-radius: 2.2px;
+    border-bottom-left-radius: 2.2px; border-bottom-right-radius: 3.3px;
+    text-shadow: 0 1.1px 1.65px rgba(0, 0, 0, 0.85);
+    margin: 0;
+    padding-top: 0.55px; padding-bottom: 0.55px;
+    padding-left: 2.75px; padding-right: 2.75px;
+}
+
+.slot-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 26.95px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    -unity-text-align: middle-center;
+    color: var(--ink);
+    opacity: 0.09;
+    margin: 0;
+    padding: 0;
+}
+
+.slot-art {
+    position: absolute;
+    left: 1.1px;
+    top: 1.1px;
+    right: 1.1px;
+    bottom: 1.1px;
+    border-top-left-radius: 4.4px; border-top-right-radius: 4.4px;
+    border-bottom-left-radius: 4.4px; border-bottom-right-radius: 4.4px;
+    background-size: cover;
+    display: none;
+}
+
+.slot-cooldown {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border-top-left-radius: 5.5px; border-top-right-radius: 5.5px;
+    border-bottom-left-radius: 5.5px; border-bottom-right-radius: 5.5px;
+    --fill-mode: 0; --fill-a: #0b0810d9;
+    --sweep: 0;
+}
+
+.slot-shadow {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border-top-left-radius: 5.5px; border-top-right-radius: 5.5px;
+    border-bottom-left-radius: 5.5px; border-bottom-right-radius: 5.5px;
+    border-top-width: 1.1px; border-right-width: 1.1px; border-bottom-width: 1.1px; border-left-width: 1.1px;
+    border-top-color: #0b0810; border-right-color: #0b0810; border-bottom-color: #0b0810; border-left-color: #0b0810;
+    --fill-mode: 0; --fill-a: #00000000;
+    --inset-y: 3.3; --inset-blur: 7.7; --inset-spread: 1.1; --inset-color: #000000ff;
+    --inset2-y: 0.99; --inset2-blur: 0.77; --inset2-color: #000000ff;
+    --inset3-y: -0.99; --inset3-blur: 0; --inset3-color: #ffffff0d;
+}
+
+.screen-x {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.screen-x-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26.4px;
+    height: 2.2px;
+    margin-left: -13.2px;
+    margin-top: -1.1px;
+    background-color: #ffffff;
+}
+
+.screen-x-a { rotate: 45deg; }
+.screen-x-b { rotate: -45deg; }
+
+.minimap-w {
+    position: absolute;
+    top: 3%;
+    right: 1.6875%;
+    width: 167.75px;
+    height: 228.25px;
+}
+
+.mm-shadow {
+    position: absolute;
+    left: -53.13px;
+    top: -53.13px;
+    width: 274.01px;
+    height: 274.01px;
+    --radius: 93.005;
+    --pad: 44;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 7.92;
+    --shadow-blur: 19.8;
+    --shadow-color: #00000099;
+}
+
+.mm-ring-mid {
+    position: absolute;
+    left: -9.02px; top: -9.02px;
+    width: 185.79px; height: 185.79px;
+    border-top-left-radius: 92.9px; border-top-right-radius: 92.9px;
+    border-bottom-left-radius: 92.9px; border-bottom-right-radius: 92.9px;
+    border-top-width: 6.93px; border-right-width: 6.93px;
+    border-bottom-width: 6.93px; border-left-width: 6.93px;
+    border-color: var(--metal-lo);
+}
+
+.mm-ring-black {
+    position: absolute;
+    left: -3.19px; top: -3.19px;
+    width: 174.13px; height: 174.13px;
+    border-top-left-radius: 87.07px; border-top-right-radius: 87.07px;
+    border-bottom-left-radius: 87.07px; border-bottom-right-radius: 87.07px;
+    border-top-width: 4.29px; border-right-width: 4.29px;
+    border-bottom-width: 4.29px; border-left-width: 4.29px;
+    border-color: #0c0a10;
+}
+
+.mm-ring-edge {
+    position: absolute;
+    left: -9.13px; top: -9.13px;
+    width: 186.01px; height: 186.01px;
+    border-top-left-radius: 93.01px; border-top-right-radius: 93.01px;
+    border-bottom-left-radius: 93.01px; border-bottom-right-radius: 93.01px;
+    border-top-width: 1.21px; border-right-width: 1.21px;
+    border-bottom-width: 1.21px; border-left-width: 1.21px;
+    border-color: var(--metal);
+}
+
+.mm-surface {
+    position: absolute;
+    left: 0; top: 0;
+    width: 167.75px; height: 167.75px;
+    border-top-left-radius: 83.88px; border-top-right-radius: 83.88px;
+    border-bottom-left-radius: 83.88px; border-bottom-right-radius: 83.88px;
+    overflow: hidden;
+    --supersample: 2;
+}
+
+.mm-arrow {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 16.5px; height: 22px;
+    margin-left: -8.25px; margin-top: -11px;
+}
+
+.mm-arrow-pool {
+    position: absolute;
+    left: -6.05px; top: -3.3px;
+    width: 28.6px; height: 28.6px;
+    --fill-mode: 2;
+    --fill-a: #0a08106b;
+    --fill-b: #0a081000;
+    --gradient-center-x: 0.5;
+    --gradient-center-y: 0.5;
+    --gradient-radius-x: 0.5;
+    --gradient-radius-y: 0.5;
+    --gradient-start: 0.12;
+}
+
+.mm-arrow-edge {
+    position: absolute;
+    left: -1.65px; top: -1.65px; right: -1.65px; bottom: -1.65px;
+    --shape: 2;
+    --fill-mode: 0;
+    --fill-a: #0c0a10;
+}
+
+.mm-arrow-face {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    --shape: 2;
+    --fill-mode: 1;
+    --fill-a: #f7e3ad;
+    --fill-b: #c8862a;
+    --gradient-angle: 90;
+    --ov1-mode: 2;
+    --ov1-a: #fffdf5d9;
+    --ov1-b: #fffdf500;
+    --ov1-center-x: 0.5;
+    --ov1-center-y: 0.28;
+    --ov1-radius-x: 0.5;
+    --ov1-radius-y: 0.42;
+    --ov2-mode: 1;
+    --ov2-a: #2a170000;
+    --ov2-b: #2a17008c;
+    --ov2-angle: 90;
+    --ov2-start: 0.42;
+}
+
+.mm-inner-shade {
+    position: absolute;
+    left: 0; top: 0;
+    width: 167.75px; height: 167.75px;
+    --radius: 83.88;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --inset-y: 0;
+    --inset-blur: 23.76;
+    --inset-color: #000000b3;
+}
+
+.mm-compass-shadow {
+    position: absolute;
+    left: 50%; top: -11.55px;
+    width: 51.7px; height: 51.7px;
+    margin-left: -25.85px; margin-top: -13.2px;
+    --radius: 12.65;
+    --pad: 13.2;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 3.03;
+    --shadow-blur: 5.91;
+    --shadow-color: #00000099;
+}
+
+.mm-compass {
+    position: absolute;
+    left: 50%; top: -11.55px;
+    width: 25.3px; height: 25.3px;
+    margin-left: -12.65px;
+    border-top-left-radius: 12.65px; border-top-right-radius: 12.65px;
+    border-bottom-left-radius: 12.65px; border-bottom-right-radius: 12.65px;
+    border-top-width: 1.38px; border-right-width: 1.38px;
+    border-bottom-width: 1.38px; border-left-width: 1.38px;
+    border-color: var(--metal);
+    --fill-mode: 2;
+    --fill-a: #2a2230;
+    --fill-b: #100d16;
+    --gradient-center-x: 0.5;
+    --gradient-center-y: 0.35;
+    --gradient-radius-x: 0.6;
+    --gradient-radius-y: 0.6;
+}
+
+.mm-compass-n {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    translate: 0 1.61px;
+    font-size: 13.2px;
+    -unity-font-definition: url("project://database/Assets/Fonts/TeX%20Gyre%20Pagella%20SDF.asset?fileID=11400000&guid=1fd5e97170156ac4dac31725d9fb3f22&type=2#TeX%20Gyre%20Pagella%20SDF");
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    color: var(--gold);
+    margin: 0;
+    padding: 0;
+}
+
+.mm-zone-row {
+    position: absolute;
+    top: 184.8px;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.mm-zone {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    letter-spacing: 25px;
+    color: var(--metal-hi);
+    text-shadow: 0 3.3px 4.4px rgba(0, 0, 0, 0.9);
+    margin: 0;
+    padding: 0;
+}
+
+.belt {
+    position: absolute;
+    left: 1.6875%;
+    top: 50%;
+    translate: 0 -50%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.belt-cord {
+    position: absolute;
+    top: 5.5px;
+    bottom: 5.5px;
+    left: 50%;
+    width: 1.1px;
+    translate: -50% 0;
+    --fill-mode: 2;
+    --fill-a: #c3b0884d;
+    --fill-b: #c3b08800;
+    --gradient-center-x: 0.5; --gradient-center-y: 0.5;
+    --gradient-radius-x: 100; --gradient-radius-y: 0.5;
+    --gradient-start: 0.76; --gradient-end: 1;
+}
+
+.belt-slot {
+    width: 33px;
+    height: 33px;
+    flex-shrink: 0;
+    margin-bottom: 9.9px;
+    align-items: center;
+    justify-content: center;
+}
+
+.belt-slot-last {
+    margin-bottom: 0;
+}
+
+.belt-ring-edge {
+    position: absolute;
+    left: -3.3px; top: -3.3px;
+    width: 39.6px; height: 39.6px;
+    border-top-left-radius: 19.8px; border-top-right-radius: 19.8px;
+    border-bottom-left-radius: 19.8px; border-bottom-right-radius: 19.8px;
+    background-color: var(--metal);
+}
+
+.belt-ring-mid {
+    position: absolute;
+    left: -2.64px; top: -2.64px;
+    width: 38.28px; height: 38.28px;
+    border-top-left-radius: 19.14px; border-top-right-radius: 19.14px;
+    border-bottom-left-radius: 19.14px; border-bottom-right-radius: 19.14px;
+    background-color: var(--metal-lo);
+}
+
+.belt-ring-black {
+    position: absolute;
+    left: -1.1px; top: -1.1px;
+    width: 35.2px; height: 35.2px;
+    border-top-left-radius: 17.6px; border-top-right-radius: 17.6px;
+    border-bottom-left-radius: 17.6px; border-bottom-right-radius: 17.6px;
+    background-color: #0c0a10;
+}
+
+.belt-shadow {
+    position: absolute;
+    left: -11px; top: -11px;
+    width: 55px; height: 55px;
+    --radius: 16.5;
+    --pad: 11;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 2.2;
+    --shadow-blur: 5.5;
+    --shadow-color: #00000099;
+}
+
+.belt-face {
+    position: absolute;
+    left: 0; top: 0;
+    width: 33px; height: 33px;
+    border-top-left-radius: 16.5px; border-top-right-radius: 16.5px;
+    border-bottom-left-radius: 16.5px; border-bottom-right-radius: 16.5px;
+    --fill-mode: 2;
+    --fill-a: #241d2b;
+    --fill-b: #0c0910;
+    --gradient-center-x: 0.5; --gradient-center-y: 0.26;
+    --gradient-radius-x: 0.72; --gradient-radius-y: 0.72;
+    --gradient-start: 0; --gradient-end: 0.72;
+    --inset-y: 0; --inset-blur: 6.6; --inset-spread: 0; --inset-color: rgba(0, 0, 0, 0.9);
+}
+
+.belt-pool {
+    position: absolute;
+    left: 1.1px; top: 1.1px;
+    width: 30.8px; height: 30.8px;
+    border-top-left-radius: 15.4px; border-top-right-radius: 15.4px;
+    border-bottom-left-radius: 15.4px; border-bottom-right-radius: 15.4px;
+    --fill-mode: 2;
+    --gradient-center-x: 0.5; --gradient-center-y: 1.08;
+    --gradient-radius-x: 0.95; --gradient-radius-y: 0.95;
+    --gradient-start: 0; --gradient-end: 0.9;
+}
+
+.belt-hp .belt-pool   { --fill-a: #b01820ad; --fill-b: #b0182000; }
+.belt-mp .belt-pool   { --fill-a: #1f6fc4ad; --fill-b: #1f6fc400; }
+.belt-cure .belt-pool { --fill-a: #67c46f8c; --fill-b: #67c46f00; }
+.belt-rej .belt-pool  { --fill-a: #d8cfa67a; --fill-b: #d8cfa600; }
+
+.belt-art {
+    position: absolute;
+    left: 6.6px; top: 6.6px;
+    width: 19.8px; height: 19.8px;
+    display: none;
+}
+
+.belt-icon {
+    font-size: 18.7px;
+    color: var(--ink-dim);
+    -unity-text-align: middle-center;
+    text-shadow: 0 1.54px 1.98px rgba(0, 0, 0, 0.85);
+}
+
+.belt-cooldown {
+    position: absolute;
+    left: 0; top: 0;
+    width: 33px; height: 33px;
+    border-top-left-radius: 16.5px; border-top-right-radius: 16.5px;
+    border-bottom-left-radius: 16.5px; border-bottom-right-radius: 16.5px;
+    --radius: 16.5;
+    --fill-mode: 0;
+    --fill-a: #06060ac7;
+    --sweep: 0;
+}
+
+.belt-key {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    translate: 0 -50%;
+    margin-left: 6.6px;
+    font-size: 9.35px;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    color: var(--ink-dim);
+    white-space: nowrap;
+    text-shadow: 0 1.1px 1.1px #000;
+}
+
+.belt-count {
+    position: absolute;
+    bottom: -2.2px;
+    right: -3.3px;
+    font-size: 9.9px;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    color: #ffffff;
+    white-space: nowrap;
+    text-shadow: 0 1.1px 2.2px #000;
+    -unity-text-outline-width: 0.55px;
+    -unity-text-outline-color: #000000;
+}
+
+.belt-out .belt-icon { opacity: 0.16; }
+.belt-out .belt-art { opacity: 0.16; }
+.belt-out .belt-pool { opacity: 0.22; }
+.belt-out .belt-count { color: var(--ink-dim); }
+
+.belt-slot:hover .belt-ring-mid { background-color: var(--metal); }
+.belt-slot:hover .belt-ring-edge { background-color: var(--metal-hi); }
+
+.xpbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10.69px;
+    --fill-mode: 1;
+    --fill-a: #0d0a1380;
+    --fill-b: #05040880;
+    --gradient-angle: 90;
+    --inset-y: 1.1;
+    --inset-blur: 2.2;
+    --inset-spread: 0;
+    --inset-color: rgba(0, 0, 0, 0.75);
+    border-top-width: 1.1px;
+    border-top-color: rgba(74, 63, 43, 0.7);
+}
+
+.xp-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    --fill-mode: 1;
+    --fill-a: #b3a97f;
+    --fill-b: #8b8259;
+    --gradient-angle: 90;
+    --gradient-start: 0;
+    --gradient-end: 0.55;
+    --ov1-mode: 1;
+    --ov1-a: #5f573800;
+    --ov1-b: #5f5738ff;
+    --ov1-angle: 90;
+    --ov1-start: 0.55;
+    --ov1-end: 1;
+    --level-axis: 1;
+    --level: 0.64;
+}
+
+.xp-ticks {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.xp-tick {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1.1px;
+    translate: -1.1px 0;
+    background-color: rgba(4, 3, 6, 0.6);
+}
+
+.xp-tick-1 { left: 10%; }
+.xp-tick-2 { left: 20%; }
+.xp-tick-3 { left: 30%; }
+.xp-tick-4 { left: 40%; }
+.xp-tick-5 { left: 50%; }
+.xp-tick-6 { left: 60%; }
+.xp-tick-7 { left: 70%; }
+.xp-tick-8 { left: 80%; }
+.xp-tick-9 { left: 90%; }
+.xp-tick-10 { left: 100%; }
+
+.enemy-plates {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.plate {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plate-title {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3.6px;
+}
+
+.plate-rank {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    margin-right: 2.9px;
+    background-image: url("project://database/Assets/Textures/UI/ess_star.png");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.plate-name {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 10px;
+    letter-spacing: 16px;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    color: #efe7d6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    -unity-text-outline-width: 0.12px;
+    -unity-text-outline-color: #000000;
+}
+
+.plate-level {
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-left: 2.2px;
+    font-size: 9px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    color: #9c9484;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+}
+
+.plate-track {
+    width: 100%;
+    height: 13.7px;
+    border-top-left-radius: 4px; border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;
+    border-top-width: 1px; border-right-width: 1px;
+    border-bottom-width: 1px; border-left-width: 1px;
+    border-top-color: #0b0810; border-right-color: #0b0810;
+    border-bottom-color: #0b0810; border-left-color: #0b0810;
+    --fill-a: #100c17;
+}
+
+.plate-fill,
+.plate-chip {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    --level-axis: 1;
+    --level: 1;
+}
+
+.plate-fill {
+    --fill-a: #e7414a;
+}
+
+.plate-chip {
+    --fill-a: #90141a;
+}
+
+.damage-numbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.dmg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    -unity-text-align: middle-center;
+    transform-origin: center;
+    font-size: 19.4px;
+    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Fonts/TeX%20Gyre%20Pagella%20SDF.asset?fileID=11400000&guid=1fd5e97170156ac4dac31725d9fb3f22&type=2#TeX%20Gyre%20Pagella%20SDF");
+    color: #efe7d6;
+    text-shadow: 0 1.4px 2.2px rgba(0, 0, 0, 1);
+    -unity-text-outline-width: 0.3px;
+    -unity-text-outline-color: #000000;
+}
+
+.sim {
+    position: absolute;
+    left: 13.2px;
+    top: 13.2px;
+    width: 275px;
+    padding: 11px;
+    background-color: rgba(10, 8, 12, 0.92);
+    border-top-left-radius: 6.6px;
+    border-top-right-radius: 6.6px;
+    border-bottom-left-radius: 6.6px;
+    border-bottom-right-radius: 6.6px;
+    border-top-width: 1.1px;
+    border-right-width: 1.1px;
+    border-bottom-width: 1.1px;
+    border-left-width: 1.1px;
+    border-color: var(--metal-line);
+}
+
+.sim-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    -unity-font-style: bold;
+    color: var(--ink-dim);
+    margin-bottom: 8.8px;
+}
+
+.sim .unity-slider {
+    margin-bottom: 8.8px;
+}
+
+.sim .unity-base-field__label {
+    color: var(--ink-dim);
+    min-width: 68.2px;
+}
+
+.inv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.inv-shadow {
+    position: absolute;
+    left: -26px;
+    top: -26px;
+    right: -26px;
+    bottom: -26px;
+    --radius: 0;
+    --pad: 26;
+    --fill-mode: 0;
+    --fill-a: #00000000;
+    --shadow-y: 0;
+    --shadow-blur: 20;
+    --shadow-color: rgba(0, 0, 0, 0.55);
+}
+
+.inv-plate {
+    flex-grow: 1;
+    flex-direction: column;
+    overflow: hidden;
+    --radius: 0;
+    --inset-y: 1.1; --inset-blur: 0; --inset-spread: 0; --inset-color: #ffffff0f;
+    --inset2-y: 0; --inset2-blur: 11.09; --inset2-spread: 0; --inset2-color: #00000099;
+    --fill-mode: 1;
+    --fill-a: #191510;
+    --fill-b: #090805;
+    --gradient-angle: 90;
+    --ov1-mode: 2;
+    --ov1-center-x: 0.5; --ov1-center-y: 0.52;
+    --ov1-radius-x: 0.45; --ov1-radius-y: 0.62;
+    --ov1-a: #00000000;
+    --ov1-b: #00000059;
+    --ov2-mode: 2;
+    --ov2-center-x: 0.5; --ov2-center-y: 0.14;
+    --ov2-radius-x: 0.6; --ov2-radius-y: 0.19;
+    --ov2-a: #cabc9f0a;
+    --ov2-b: #cabc9f00;
+}
+
+.inv-edge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+}
+
+.inv-header {
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    height: 46px;
+}
+
+.inv-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/TeX%20Gyre%20Pagella%20SDF.asset?fileID=11400000&guid=1fd5e97170156ac4dac31725d9fb3f22&type=2#TeX%20Gyre%20Pagella%20SDF");
+    -unity-text-align: middle-left;
+}
+
+.inv-body {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.inv-sect {
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.inv-sect-label {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    -unity-font-style: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.inv-sect-rule {
+    flex-grow: 1;
+    height: 1px;
+    --fill-mode: 1;
+    --gradient-angle: 0;
+    --radius: 0;
+}
+
+.inv-bag-tools {
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.inv-search {
+    flex-grow: 1;
+    justify-content: center;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-top-left-radius: 2px; border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px; border-bottom-right-radius: 2px;
+}
+
+.inv-search-input {
+    flex-grow: 1;
+    margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+    --unity-cursor-color: var(--metal-hi);
+}
+
+.inv-search-input.inv-caret-off {
+    --unity-cursor-color: rgba(0, 0, 0, 0);
+}
+
+.inv-search-input .unity-base-text-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;
+    padding-top: 0; padding-bottom: 0; padding-left: 0; padding-right: 0;
+    -unity-text-align: middle-left;
+}
+
+.inv-search-hint {
+    position: absolute;
+    left: 6px;
+    top: 0; bottom: 0;
+    -unity-text-align: middle-left;
+    letter-spacing: 2px;
+    opacity: 0.55;
+}
+
+.inv-sort {
+    flex-shrink: 0;
+    margin-left: 6px;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 2px; border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px; border-bottom-right-radius: 2px;
+}
+
+.inv-sort:hover {
+    border-top-color: var(--metal); border-right-color: var(--metal);
+    border-bottom-color: var(--metal); border-left-color: var(--metal);
+}
+
+.inv-sort-art {
+    position: absolute;
+    left: 3px; top: 3px; right: 3px; bottom: 3px;
+    background-size: contain;
+}
+
+.inv-sort-label {
+    -unity-text-align: middle-center;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.inv-gear {
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.inv-slot {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 5.5px; border-top-right-radius: 5.5px;
+    border-bottom-left-radius: 5.5px; border-bottom-right-radius: 5.5px;
+    border-top-width: 1.1px; border-right-width: 1.1px;
+    border-bottom-width: 1.1px; border-left-width: 1.1px;
+    --fill-mode: 1;
+    --gradient-angle: 90;
+    --inset-y: 3.3; --inset-blur: 7.7; --inset-spread: 1.1; --inset-color: #000000ff;
+    --inset2-y: 0.99; --inset2-blur: 0.77; --inset2-color: #000000ff;
+    --inset3-y: -0.99; --inset3-blur: 0; --inset3-color: #ffffff0d;
+}
+
+.inv-slot:hover {
+    border-top-color: var(--metal); border-right-color: var(--metal);
+    border-bottom-color: var(--metal); border-left-color: var(--metal);
+}
+
+.inv-slot-icon {
+    position: absolute;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: contain;
+}
+
+.inv-slot-label {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    letter-spacing: 2px;
+    opacity: 0.5;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+}
+
+.inv-bag {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 18px;
+}
+
+.inv-well {
+    flex-shrink: 0;
+    --fill-mode: 1;
+    --gradient-angle: 90;
+    --inset-y: 5; --inset-blur: 11; --inset-spread: 1.1; --inset-color: rgba(0, 0, 0, 0.8);
+    --inset2-y: 0.99; --inset2-blur: 0.77; --inset2-color: #000000ff;
+    --inset3-y: -0.99; --inset3-blur: 0; --inset3-color: #ffffff0d;
+    border-top-left-radius: 5.5px; border-top-right-radius: 5.5px;
+    border-bottom-left-radius: 5.5px; border-bottom-right-radius: 5.5px;
+}
+
+.inv-bag-column {
+    flex-shrink: 0;
+    flex-direction: column;
+}
+
+.inv-grid {
+    flex-grow: 1;
+}
+
+.inv-rule-line {
+    position: absolute;
+}
+
+.inv-preview {
+    position: absolute;
+}
+
+.inv-tile {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 4.4px; border-top-right-radius: 4.4px;
+    border-bottom-left-radius: 4.4px; border-bottom-right-radius: 4.4px;
+}
+
+.inv-tile-art {
+    position: absolute;
+    left: 4px; top: 4px; right: 4px; bottom: 4px;
+    background-size: contain;
+}
+
+.inv-essence-row {
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 34px;
+}
+
+.inv-essence {
+    flex-direction: row;
+    align-items: center;
+}
+
+.inv-orb {
+    flex-shrink: 0;
+    margin-right: 9px;
+    background-image: url("../Textures/UI/ess_star.png");
+    background-size: cover;
+}
+
+.inv-essence-value {
+    -unity-font-definition: url("project://database/Assets/Fonts/TeX%20Gyre%20Pagella%20SDF.asset?fileID=11400000&guid=1fd5e97170156ac4dac31725d9fb3f22&type=2#TeX%20Gyre%20Pagella%20SDF");
+    margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+}
+
+.inv-essence-label {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    font-size: 9px;
+    letter-spacing: 2.4px;
+    margin-top: 0; margin-bottom: 0; margin-left: 0; margin-right: 0;
+}
+
+.inv-catcher {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+}
+
+.inv-ghost {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 320px;
+    max-height: 560px;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgba(10, 8, 12, 0.95);
+    border-top-width: 1.1px; border-right-width: 1.1px;
+    border-bottom-width: 1.1px; border-left-width: 1.1px;
+    border-color: var(--metal-line);
+    border-top-left-radius: 3.3px; border-top-right-radius: 3.3px;
+    border-bottom-left-radius: 3.3px; border-bottom-right-radius: 3.3px;
+}
+
+.tooltip-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    font-size: 16px;
+    -unity-font-style: bold;
+    white-space: normal;
+}
+
+.tooltip-rarity {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    font-size: 11px;
+    margin-top: 2px;
+    white-space: normal;
+}
+
+.tooltip-type-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+.tooltip-type {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    font-size: 11px;
+    white-space: normal;
+}
+
+.tooltip-subtype {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    font-size: 11px;
+    margin-left: 12px;
+    white-space: normal;
+}
+
+.tooltip-line {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    font-size: 14px;
+    margin-top: 2px;
+    white-space: normal;
+}
+
+.tooltip-description {
+    -unity-font-definition: url("project://database/Assets/Fonts/Selawik%20SDF.asset?fileID=11400000&guid=a4e0cb5d19ff2a442bbc2cc35df5e68b&type=2#Selawik%20SDF");
+    font-size: 13px;
+    -unity-font-style: italic;
+    margin-top: 8px;
+    white-space: normal;
+}

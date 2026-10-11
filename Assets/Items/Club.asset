@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8824d4faae904c419daa51e892eceb1, type: 3}
+  m_Name: Club
+  m_EditorClassIdentifier: Assembly-CSharp::Mace
+  displayName: Club
+  gridSize: {x: 2, y: 3}
+  equipSlot: 5
+  rarity: 0
+  icon: {fileID: 0}
+  tint: {r: 0.6, g: 0.6, b: 0.62, a: 1}
+  groundPrefab: {fileID: 395379675880116047, guid: 4c18ae20c9f7b124b9d5720a5bf0f461, type: 3}
+  ability: {fileID: 11400000, guid: b0f83430ffd44b3789cebdde891dd69a, type: 2}
+  modifiers:
+    addedDamage:
+      amounts: []
+    increasedDamage: []
+    addedAttackSpeed: 0
+    extraProjectiles: 0
+    pierceCount: 0
+    addedBlastRadius: 0
+    onHitEffects: []
+  damage:
+    amounts:
+    - type: 1
+      amount: 5

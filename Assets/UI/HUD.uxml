@@ -1,0 +1,289 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/theme.uss?fileID=7433441132597879392&amp;guid=55c7530cc955efd4c9d982b6aa2cdf56&amp;type=3#theme"/>
+    <Style src="project://database/Assets/UI/HUD.uss?fileID=7433441132597879392&amp;guid=2080241bd8957de4bbdc12533fd1c734&amp;type=3#HUD"/>
+    <ui:VisualElement name="hud" class="hud">
+        <CssBox name="xpbar" class="xpbar">
+            <CssBox name="xp-fill" class="xp-fill"/>
+            <ui:VisualElement name="xp-ticks" class="xp-ticks">
+                <ui:VisualElement class="xp-tick xp-tick-1"/>
+                <ui:VisualElement class="xp-tick xp-tick-2"/>
+                <ui:VisualElement class="xp-tick xp-tick-3"/>
+                <ui:VisualElement class="xp-tick xp-tick-4"/>
+                <ui:VisualElement class="xp-tick xp-tick-5"/>
+                <ui:VisualElement class="xp-tick xp-tick-6"/>
+                <ui:VisualElement class="xp-tick xp-tick-7"/>
+                <ui:VisualElement class="xp-tick xp-tick-8"/>
+                <ui:VisualElement class="xp-tick xp-tick-9"/>
+                <ui:VisualElement class="xp-tick xp-tick-10"/>
+            </ui:VisualElement>
+        </CssBox>
+        <ui:VisualElement name="hud-bottom" class="hud-bottom">
+            <ui:VisualElement name="health-globe" class="globe hp">
+                <CssBox class="globe-shadow"/>
+                <ui:VisualElement class="globe-ring-dark"/>
+                <ui:VisualElement class="globe-ring-black"/>
+                <ui:VisualElement class="globe-ring-edge"/>
+                <CssBox class="globe-clip">
+                    <CssBox class="globe-well-shade"/>
+                    <CssBox name="health-trail" class="liquid-trail"/>
+                    <CssBox name="health-liquid" class="liquid"/>
+                </CssBox>
+                <CssBox class="globe-overlay"/>
+                <ui:VisualElement class="globe-val">
+                    <ui:Label name="health-num" text="842" class="globe-num"/>
+                    <ui:Label text="HEALTH" class="globe-label"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="center-column">
+                <CssBox class="actionbar-shadow"/>
+                <ui:VisualElement class="toprow">
+                    <ui:VisualElement name="effects" class="effects">
+                        <ui:VisualElement class="effect-row">
+                            <CssBox class="eff buff">
+                                <ui:VisualElement class="eff-art"/>
+                                <ui:Label text="A" class="eff-icon"/>
+                                <CssBox class="eff-drain drain-120"/>
+                                <ui:Label text="18" class="eff-timer"/>
+                            </CssBox>
+                            <CssBox class="eff buff">
+                                <ui:VisualElement class="eff-art"/>
+                                <ui:Label text="B" class="eff-icon"/>
+                                <CssBox class="eff-drain drain-220"/>
+                                <ui:Label text="42" class="eff-timer"/>
+                            </CssBox>
+                            <CssBox class="eff buff">
+                                <ui:VisualElement class="eff-art"/>
+                                <ui:Label text="C" class="eff-icon"/>
+                                <CssBox class="eff-drain drain-40"/>
+                                <ui:Label text="6" class="eff-timer"/>
+                            </CssBox>
+                            <CssBox class="eff buff">
+                                <ui:VisualElement class="eff-art"/>
+                                <ui:Label text="D" class="eff-icon"/>
+                                <CssBox class="eff-drain drain-300"/>
+                                <ui:Label text="1:12" class="eff-timer"/>
+                            </CssBox>
+                        </ui:VisualElement>
+                        <ui:VisualElement class="eff-divider"/>
+                        <ui:VisualElement class="effect-row">
+                            <CssBox class="eff debuff bleed">
+                                <ui:VisualElement class="eff-art"/>
+                                <ui:Label text="E" class="eff-icon"/>
+                                <ui:Label text="4" class="eff-timer"/>
+                            </CssBox>
+                            <CssBox class="eff debuff poison">
+                                <ui:VisualElement class="eff-art"/>
+                                <ui:Label text="F" class="eff-icon"/>
+                                <ui:Label text="9" class="eff-timer"/>
+                            </CssBox>
+                            <CssBox class="eff debuff">
+                                <ui:VisualElement class="eff-art"/>
+                                <ui:Label text="G" class="eff-icon"/>
+                                <ui:Label text="22" class="eff-timer"/>
+                            </CssBox>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="essence" class="essence">
+                        <ui:VisualElement class="ess-orb">
+                            <CssBox class="ess-orb-shadow"/>
+                            <CssBox class="ess-orb-glow"/>
+                            <CssBox class="ess-orb-face"/>
+                            <ui:VisualElement class="ess-art"/>
+                        </ui:VisualElement>
+                        <ui:Label name="essence-amount" text="24,860" class="ess-amount"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <CssBox name="action-bar" class="actionbar">
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="1" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="2" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="3" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="4" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="5" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="6" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="LMB" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="slot"><ui:VisualElement class="slot-rim"/><CssBox class="slot-fill"/><ui:VisualElement class="slot-art"/><CssBox class="slot-shadow"/><CssBox class="slot-cooldown"/><ui:Label text="+" class="slot-icon"/><ui:Label text="R" class="slot-key"/></ui:VisualElement>
+                    <ui:VisualElement class="bar-inlay-frame"/>
+                    <ui:VisualElement class="bar-tracery">
+                        <CssBox class="tr-arm tr-h tr-l tr-t"/>
+                        <CssBox class="tr-arm tr-v tr-l tr-t"/>
+                        <CssBox class="tr-arm tr-h tr-r tr-t"/>
+                        <CssBox class="tr-arm tr-v tr-r tr-t"/>
+                        <CssBox class="tr-arm tr-h tr-l tr-b"/>
+                        <CssBox class="tr-arm tr-v tr-l tr-b"/>
+                        <CssBox class="tr-arm tr-h tr-r tr-b"/>
+                        <CssBox class="tr-arm tr-v tr-r tr-b"/>
+                    </ui:VisualElement>
+                    <CssBox class="bar-inlay"/>
+                </CssBox>
+            </ui:VisualElement>
+            <ui:VisualElement name="mana-globe" class="globe rs">
+                <CssBox class="globe-shadow"/>
+                <ui:VisualElement class="globe-ring-dark"/>
+                <ui:VisualElement class="globe-ring-black"/>
+                <ui:VisualElement class="globe-ring-edge"/>
+                <CssBox class="globe-clip">
+                    <CssBox class="globe-well-shade"/>
+                    <CssBox name="mana-trail" class="liquid-trail"/>
+                    <CssBox name="mana-liquid" class="liquid"/>
+                </CssBox>
+                <CssBox class="globe-overlay"/>
+                <ui:VisualElement class="globe-val">
+                    <ui:Label name="mana-num" text="310" class="globe-num"/>
+                    <ui:Label text="MANA" class="globe-label"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="quest-tracker" class="quest-tracker">
+            <CssBox class="plate-shadow q-shadow"/>
+            <CssBox name="quests" class="quests">
+                <ui:VisualElement class="q-head">
+                    <ui:Label text="THE ASHEN PACT" class="q-title"/>
+                    <CssBox class="q-rule"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="q-obj">
+                    <CssBox class="q-mark"/>
+                    <ui:Label text="Cleanse the Hollow shrines" class="q-text"/>
+                    <ui:Label text="2/3" class="q-count"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="q-obj">
+                    <CssBox class="q-mark"/>
+                    <ui:Label text="Slay Dreadfang Marauders" class="q-text"/>
+                    <ui:Label text="7/12" class="q-count"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="q-obj q-done q-obj-last">
+                    <CssBox class="q-mark"/>
+                    <ui:VisualElement class="q-strike-wrap">
+                        <ui:Label text="Speak with Sister Vael" class="q-text"/>
+                        <ui:VisualElement class="q-strike"/>
+                    </ui:VisualElement>
+                    <ui:Label text="DONE" class="q-count"/>
+                </ui:VisualElement>
+            </CssBox>
+            <CssBox class="q-spine"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="chat" class="chat">
+            <CssBox class="plate-shadow"/>
+            <ui:VisualElement name="chat-tabs" class="chat-tabs">
+                <ui:Label name="chat-tab-all" text="ALL" class="chat-tab chat-tab-active"/>
+                <ui:Label name="chat-tab-general" text="GENERAL" class="chat-tab"/>
+                <ui:Label name="chat-tab-combat" text="COMBAT" class="chat-tab"/>
+                <ui:Label name="chat-tab-loot" text="LOOT" class="chat-tab"/>
+            </ui:VisualElement>
+            <CssBox name="chat-panel" class="chat-panel">
+                <ui:ScrollView name="chat-feed" class="chat-feed" mode="Vertical" vertical-scroller-visibility="Auto">
+                    <ui:VisualElement class="chat-line">
+                        <ui:Label text="[10:31]" class="chat-time"/><ui:Label text="Welcome to Ashen Hollow." class="chat-text"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="chat-line">
+                        <ui:Label text="[10:32]" class="chat-time"/><ui:Label text="[Party] Sister Vael: The shrines are stirring again." class="chat-text"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="chat-line">
+                        <ui:Label text="[10:32]" class="chat-time"/><ui:Label text="Dreadfang Marauder hits you for 12." class="chat-text"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="chat-line">
+                        <ui:Label text="[10:33]" class="chat-time"/><ui:Label text="You receive 240 essence." class="chat-text"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="chat-line">
+                        <ui:Label text="[10:33]" class="chat-time"/><ui:Label text="You: On my way." class="chat-text"/>
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </CssBox>
+            <CssBox name="chat-entry" class="chat-entry">
+                <ui:Label name="chat-channel" text="[Say]" class="chat-chip"/>
+                <ui:TextField name="chat-input" class="chat-input" multiline="false" max-length="255"/>
+            </CssBox>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-x" class="screen-x">
+            <ui:VisualElement class="screen-x-bar screen-x-a"/>
+            <ui:VisualElement class="screen-x-bar screen-x-b"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="minimap" class="minimap-w">
+            <CssBox class="mm-shadow"/>
+            <ui:VisualElement class="mm-ring-mid"/>
+            <ui:VisualElement class="mm-ring-black"/>
+            <ui:VisualElement class="mm-ring-edge"/>
+            <MinimapView name="minimap-surface" class="mm-surface">
+                <ui:VisualElement class="mm-arrow">
+                    <CssBox class="mm-arrow-pool"/>
+                    <CssBox class="mm-arrow-edge"/>
+                    <CssBox class="mm-arrow-face"/>
+                </ui:VisualElement>
+            </MinimapView>
+            <CssBox class="mm-inner-shade"/>
+            <CssBox class="mm-compass-shadow"/>
+            <CssBox class="mm-compass">
+                <ui:Label text="N" class="mm-compass-n"/>
+            </CssBox>
+            <ui:VisualElement class="mm-zone-row">
+                <CssBox class="orn-taper orn-taper-l"/>
+                <ui:Label text="ASHEN HOLLOW" class="mm-zone"/>
+                <CssBox class="orn-taper orn-taper-r"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="belt" class="belt">
+            <CssBox class="belt-cord"/>
+            <ui:VisualElement class="belt-slot belt-hp">
+                <CssBox class="belt-shadow"/>
+                <ui:VisualElement class="belt-ring-edge"/>
+                <ui:VisualElement class="belt-ring-mid"/>
+                <ui:VisualElement class="belt-ring-black"/>
+                <CssBox class="belt-face"/>
+                <CssBox class="belt-pool"/>
+                <CssBox class="belt-cooldown"/>
+                <ui:VisualElement class="belt-art"/>
+                <ui:Label text="H" class="belt-icon"/>
+                <ui:Label text="Z" class="belt-key"/>
+                <ui:Label text="5" class="belt-count"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="belt-slot belt-mp">
+                <CssBox class="belt-shadow"/>
+                <ui:VisualElement class="belt-ring-edge"/>
+                <ui:VisualElement class="belt-ring-mid"/>
+                <ui:VisualElement class="belt-ring-black"/>
+                <CssBox class="belt-face"/>
+                <CssBox class="belt-pool"/>
+                <CssBox class="belt-cooldown"/>
+                <ui:VisualElement class="belt-art"/>
+                <ui:Label text="M" class="belt-icon"/>
+                <ui:Label text="X" class="belt-key"/>
+                <ui:Label text="3" class="belt-count"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="belt-slot belt-cure">
+                <CssBox class="belt-shadow"/>
+                <ui:VisualElement class="belt-ring-edge"/>
+                <ui:VisualElement class="belt-ring-mid"/>
+                <ui:VisualElement class="belt-ring-black"/>
+                <CssBox class="belt-face"/>
+                <CssBox class="belt-pool"/>
+                <CssBox class="belt-cooldown"/>
+                <ui:VisualElement class="belt-art"/>
+                <ui:Label text="C" class="belt-icon"/>
+                <ui:Label text="C" class="belt-key"/>
+                <ui:Label text="2" class="belt-count"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="belt-slot belt-rej belt-slot-last">
+                <CssBox class="belt-shadow"/>
+                <ui:VisualElement class="belt-ring-edge"/>
+                <ui:VisualElement class="belt-ring-mid"/>
+                <ui:VisualElement class="belt-ring-black"/>
+                <CssBox class="belt-face"/>
+                <CssBox class="belt-pool"/>
+                <CssBox class="belt-cooldown"/>
+                <ui:VisualElement class="belt-art"/>
+                <ui:Label text="R" class="belt-icon"/>
+                <ui:Label text="V" class="belt-key"/>
+                <ui:Label text="1" class="belt-count"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="menu" class="menu">
+            <CssBox class="accent-rule menu-rule"/>
+            <CssBox class="accent-diamond menu-diamond"/>
+            <ui:VisualElement class="mbtn mbtn-inventory"><ui:VisualElement class="mbtn-art-shadow"/><ui:VisualElement class="mbtn-art"/><ui:Label text="INVENTORY" class="mbtn-tip"/></ui:VisualElement>
+            <ui:VisualElement class="mbtn mbtn-character"><ui:VisualElement class="mbtn-art-shadow"/><ui:VisualElement class="mbtn-art"/><ui:Label text="CHARACTER" class="mbtn-tip"/></ui:VisualElement>
+            <ui:VisualElement class="mbtn mbtn-skills"><ui:VisualElement class="mbtn-art-shadow"/><ui:VisualElement class="mbtn-art"/><ui:Label text="SKILLS" class="mbtn-tip"/></ui:VisualElement>
+            <ui:VisualElement class="mbtn mbtn-talents"><ui:VisualElement class="mbtn-art-shadow"/><ui:VisualElement class="mbtn-art"/><ui:Label text="TALENTS" class="mbtn-tip"/></ui:VisualElement>
+            <ui:VisualElement class="mbtn mbtn-questlog"><ui:VisualElement class="mbtn-art-shadow"/><ui:VisualElement class="mbtn-art"/><ui:Label text="QUEST LOG" class="mbtn-tip"/></ui:VisualElement>
+            <ui:VisualElement class="mbtn mbtn-system mbtn-last"><ui:VisualElement class="mbtn-art-shadow"/><ui:VisualElement class="mbtn-art"/><ui:Label text="SYSTEM" class="mbtn-tip"/></ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

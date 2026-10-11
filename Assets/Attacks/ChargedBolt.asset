@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07dce16fefae4b11b3a17136b4a2f002, type: 3}
+  m_Name: ChargedBolt
+  m_EditorClassIdentifier: 
+  cooldown: 0.5
+  movementSpeedMultiplier: 0.35
+  aimsAtCursor: 1
+  indicatorPrefab: {fileID: 4100000000000000001, guid: 85c4fb60bf2d4176bb8c3b443ff65637, type: 3}
+  turnDuration: 0.12
+  chargeDuration: 1.1
+  damageMultiplierAtZeroCharge: 0.4
+  damageMultiplierAtFullCharge: 1.8
+  minimumBlastRadius: 0.6
+  maximumBlastRadius: 2.6
+  boltSpeed: 22
+  launchHeightAboveGround: 1.4
+  launchForwardOffset: 0.6
+  maximumCastRange: 22
+  degreesBetweenProjectiles: 9
+  bolt:
+    size: {x: 0.3, y: 0.3, z: 0.5}
+    color: {r: 0.722, g: 0.306, b: 0.878, a: 0.9}
+    gravity: 0
+    maximumLifetime: 4
+    blastEffectDuration: 0.35

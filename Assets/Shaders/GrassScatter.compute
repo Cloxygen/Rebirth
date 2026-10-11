@@ -1,0 +1,242 @@
+#pragma kernel ScatterGrass
+#pragma kernel UpdateBendMap
+
+#include "GroundMask.hlsl"
+
+struct GrassBlade
+{
+    float3 positionWS;
+    float  rotation;
+    float2 size;
+    float2 hash;
+};
+
+AppendStructuredBuffer<GrassBlade> _Blades;
+
+Texture2D _Heightmap;
+SamplerState sampler_linear_clamp;
+
+float4 _TerrainPosition;
+float4 _TerrainSize;
+float  _HeightmapResolution;
+
+int2   _GridOriginIndex;
+float  _CellSize;
+uint   _BladesPerSide;
+
+float4 _CameraPosition;
+float  _DrawDistance;
+float  _FalloffStartDistance;
+float  _Density;
+
+float4 _FrustumPlanes[6];
+
+float2 _BladeHeightRange;
+float2 _BladeWidthRange;
+
+float _GrassMaskEnabled;
+float _GrassMaskThreshold;
+float _GrassMaskFeather;
+float _PatchSizeFalloff;
+
+RWTexture2D<float2> _BendMapPrevious;
+RWTexture2D<float2> _BendMapCurrent;
+
+StructuredBuffer<float4> _Benders;
+int    _BenderCount;
+
+StructuredBuffer<float4> _Blockers;
+int    _BlockerCount;
+
+float4 _BendMapOrigin;
+float4 _BendMapPreviousOrigin;
+float  _BendMapTexelSize;
+int    _BendMapResolution;
+float  _BendRecoveryThisFrame;
+
+uint hashUint(uint x)
+{
+    x ^= x >> 16;
+    x *= 0x7feb352du;
+    x ^= x >> 15;
+    x *= 0x846ca68bu;
+    x ^= x >> 16;
+    return x;
+}
+
+float2 hash22i(int2 cell, uint salt)
+{
+    uint h = hashUint(uint(cell.x) * 73856093u ^ uint(cell.y) * 19349663u ^ salt);
+    uint h2 = hashUint(h);
+    return float2(h & 0xffffffu, h2 & 0xffffffu) / 16777215.0;
+}
+
+float hash11i(int2 cell, uint salt)
+{
+    return (hashUint(uint(cell.x) * 73856093u ^ uint(cell.y) * 19349663u ^ salt) & 0xffffffu) / 16777215.0;
+}
+
+void PatchFactors(float2 worldXZ, out float coverage, out float sizeFade)
+{
+    if (_GrassMaskEnabled < 0.5)
+    {
+        coverage = 1.0;
+        sizeFade = 1.0;
+        return;
+    }
+
+    float interiorRamp = smoothstep(_GrassMaskThreshold - _GrassMaskFeather,
+                                    _GrassMaskThreshold + _GrassMaskFeather,
+                                    GroundMossMask(worldXZ));
+    coverage = interiorRamp;
+    sizeFade = lerp(1.0 - _PatchSizeFalloff, 1.0, interiorRamp);
+}
+
+[numthreads(8, 8, 1)]
+void ScatterGrass(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= _BladesPerSide || id.y >= _BladesPerSide)
+    {
+        return;
+    }
+
+    int2 cellIndex = _GridOriginIndex + int2(id.xy);
+    float2 cellWS = float2(cellIndex) * _CellSize;
+
+    float2 jitter = hash22i(cellIndex, 0u);
+    float2 traits = hash22i(cellIndex, 0x9e3779b9u);
+    float2 positionXZ = cellWS + (jitter - 0.5) * _CellSize;
+
+    float planarDistance = distance(positionXZ, _CameraPosition.xz);
+    if (planarDistance >= _DrawDistance)
+    {
+        return;
+    }
+
+    float falloffStart = min(_FalloffStartDistance, _DrawDistance - 0.01);
+    float distanceFade = 1.0 - smoothstep(falloffStart, _DrawDistance, planarDistance);
+
+    if (distanceFade < 0.1)
+    {
+        return;
+    }
+
+    float2 uv = (positionXZ - _TerrainPosition.xz) / _TerrainSize.xz;
+    if (any(uv < 0.0) || any(uv > 1.0))
+    {
+        return;
+    }
+
+    float2 heightmapUV = (uv * (_HeightmapResolution - 1.0) + 0.5) / _HeightmapResolution;
+
+    float sampled = _Heightmap.SampleLevel(sampler_linear_clamp, heightmapUV, 0).r;
+    float heightWS = sampled * 2.0 * _TerrainSize.y + _TerrainPosition.y;
+
+    float3 positionWS = float3(positionXZ.x, heightWS, positionXZ.y);
+
+    float maxHeight = _BladeHeightRange.y * distanceFade;
+    float maxWidth = _BladeWidthRange.y * distanceFade;
+    float3 cullCentre = positionWS + float3(0.0, maxHeight * 0.5, 0.0);
+    float cullRadius = maxHeight * 0.5 + maxWidth;
+
+    for (int i = 0; i < 6; i++)
+    {
+        if (dot(_FrustumPlanes[i].xyz, cullCentre) + _FrustumPlanes[i].w < -cullRadius)
+        {
+            return;
+        }
+    }
+
+    for (int b = 0; b < _BlockerCount; b++)
+    {
+        float4 rect = _Blockers[b];
+        if (positionXZ.x >= rect.x && positionXZ.x <= rect.z &&
+            positionXZ.y >= rect.y && positionXZ.y <= rect.w)
+        {
+            return;
+        }
+    }
+
+    float coverage;
+    float sizeFade;
+    PatchFactors(positionXZ, coverage, sizeFade);
+
+    float spawnChance = _Density * coverage * GroundMossColor2Weight(positionXZ);
+    if (hash11i(cellIndex, 0x85ebca6bu) > spawnChance)
+    {
+        return;
+    }
+
+    float width = lerp(_BladeWidthRange.x, _BladeWidthRange.y, traits.x) * distanceFade * sizeFade;
+    float height = lerp(_BladeHeightRange.x, _BladeHeightRange.y, traits.y) * distanceFade * sizeFade;
+
+    GrassBlade blade;
+    blade.positionWS = positionWS;
+    blade.rotation = jitter.y * 6.28318530718;
+    blade.size = float2(width, height);
+    blade.hash = traits;
+
+    _Blades.Append(blade);
+}
+
+float2 BendFromCurrentBenders(float2 worldXZ)
+{
+    float2 push = float2(0.0, 0.0);
+
+    for (int i = 0; i < _BenderCount; i++)
+    {
+        float4 bender = _Benders[i];
+        float2 offset = worldXZ - bender.xy;
+        float dist = length(offset);
+
+        if (dist >= bender.z)
+        {
+            continue;
+        }
+
+        float falloff = 1.0 - saturate(dist / max(bender.z, 1e-4));
+        falloff *= falloff;
+
+        float2 direction = dist > 1e-4 ? offset / dist : float2(0.0, 0.0);
+        push += direction * falloff;
+    }
+
+    return push;
+}
+
+float2 RecoverTowardUpright(float2 bend)
+{
+    float bentAmount = length(bend);
+    if (bentAmount <= 1e-5)
+    {
+        return float2(0.0, 0.0);
+    }
+
+    float recovered = max(bentAmount - _BendRecoveryThisFrame, 0.0);
+    return bend / bentAmount * recovered;
+}
+
+[numthreads(8, 8, 1)]
+void UpdateBendMap(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= (uint)_BendMapResolution || id.y >= (uint)_BendMapResolution)
+    {
+        return;
+    }
+
+    float2 worldXZ = _BendMapOrigin.xy + (float2(id.xy) + 0.5) * _BendMapTexelSize;
+
+    int2 sameGroundLastFrame = int2(id.xy)
+        + int2(round((_BendMapOrigin.xy - _BendMapPreviousOrigin.xy) / _BendMapTexelSize));
+
+    float2 bendLastFrame = float2(0.0, 0.0);
+    if (all(sameGroundLastFrame >= 0) && all(sameGroundLastFrame < _BendMapResolution))
+    {
+        bendLastFrame = _BendMapPrevious[sameGroundLastFrame];
+    }
+
+    float2 recovering = RecoverTowardUpright(bendLastFrame);
+    float2 pressedNow = BendFromCurrentBenders(worldXZ);
+
+    _BendMapCurrent[id.xy] = length(pressedNow) > length(recovering) ? pressedNow : recovering;
+}
