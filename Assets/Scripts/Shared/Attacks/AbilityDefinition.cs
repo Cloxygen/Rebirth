@@ -13,8 +13,6 @@ public abstract class AbilityDefinition : ScriptableObject
     public Sprite icon;
     public float turnDuration = 0.12f;
 
-    public LayerMask hittableLayers = ~0;
-
     public float knockbackDistance;
 
     [Header("Cost")]

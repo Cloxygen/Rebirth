@@ -2,6 +2,8 @@
 
 A multiplayer action RPG in Unity, built solo. In development.
 
+![In-game screenshot](media/screenshot.webp)
+
 ## Stack
 
 - Unity 6 (6000.3), C#, URP

@@ -843,6 +843,9 @@ MonoBehaviour:
   aimLayers:
     serializedVersion: 2
     m_Bits: 1545
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 4294967167
 --- !u!114 &5971137500647682304
 MonoBehaviour:
   m_ObjectHideFlags: 0

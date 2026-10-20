@@ -64,7 +64,7 @@ public class ChargedBolt : Ability
         {
             float yaw = (index - (bolts - 1) * 0.5f) * definition.degreesBetweenProjectiles;
 
-            Shot.Launch(Fanned(curve, yaw), body, definition.hittableLayers, damage, blast,
+            Shot.Launch(Fanned(curve, yaw), body, aim.HittableLayers, damage, blast,
                         definition.bolt, effects, PierceCount, definition.knockbackDistance);
         }
     }
@@ -77,8 +77,16 @@ public class ChargedBolt : Ability
 
     private BallisticCurve BuildCurve()
     {
-        return Ballistics.CurveThatLandsOn(LaunchPosition, aim.Point, definition.boltSpeed,
+        return Ballistics.CurveThatLandsOn(LaunchPosition, TargetInRange(), definition.boltSpeed,
                                            definition.bolt.gravity);
+    }
+
+    private Vector3 TargetInRange()
+    {
+        Vector3 reach = aim.Point - body.position;
+        reach.y = 0.0f;
+        Vector3 allowed = Vector3.ClampMagnitude(reach, definition.maximumCastRange);
+        return new Vector3(body.position.x + allowed.x, aim.Point.y, body.position.z + allowed.z);
     }
 
     private BallisticCurve Fanned(in BallisticCurve curve, float yawDegrees)
@@ -97,7 +105,7 @@ public class ChargedBolt : Ability
             SpreadDegrees = 0.0f,
             GroundRadius = BlastRadius,
             SweepRadius = Mathf.Max(definition.bolt.size.x, definition.bolt.size.y) * 0.5f,
-            SweepLayers = aim.SweepLayers(definition.hittableLayers),
+            SweepLayers = aim.SweepLayers,
             Duration = definition.maximumCastRange / Mathf.Max(0.01f, definition.boltSpeed),
             Charge = charge
         };

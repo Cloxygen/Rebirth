@@ -4,11 +4,13 @@ using UnityEngine.InputSystem;
 public class Aim : MonoBehaviour
 {
     [SerializeField] private LayerMask aimLayers = ~0;
+    [SerializeField] private LayerMask hittableLayers = ~0;
 
     private CharacterController characterController;
     private Camera aimCamera;
 
     public Vector3 Point { get; private set; }
+    public LayerMask HittableLayers => hittableLayers;
 
     public void PointAt(Vector3 worldPoint)
     {
@@ -50,8 +52,5 @@ public class Aim : MonoBehaviour
             + transform.forward * forwardOffset;
     }
 
-    public int SweepLayers(LayerMask hittableLayers)
-    {
-        return hittableLayers.value & ~(1 << gameObject.layer);
-    }
+    public int SweepLayers => hittableLayers.value & ~(1 << gameObject.layer);
 }

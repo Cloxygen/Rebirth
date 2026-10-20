@@ -94,7 +94,7 @@ public class ComboSwing : Ability
 
     private void ThrowSwing()
     {
-        Hitbox hitbox = new Hitbox(body, definition.hitboxSize, definition.hittableLayers,
+        Hitbox hitbox = new Hitbox(body, definition.hitboxSize, aim.HittableLayers,
                                    ComposeDamage(swing.damageMultiplier), definition.knockbackDistance,
                                    CollectOnHitEffects());
         hitbox.Struck += NoteContact;

@@ -57,7 +57,7 @@ public class FlatShot : Ability
             float fan = (index - (arrows - 1) * 0.5f) * definition.degreesBetweenProjectiles;
             float yaw = fan + RollScatter(spread);
 
-            Shot.Launch(Fanned(curve, yaw), body, definition.hittableLayers, damage,
+            Shot.Launch(Fanned(curve, yaw), body, aim.HittableLayers, damage,
                         AddedBlastRadius, definition.projectile, effects, PierceCount,
                         definition.knockbackDistance);
         }

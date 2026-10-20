@@ -73,7 +73,7 @@ public class ArrowShot : Ability
             float fan = (index - (arrows - 1) * 0.5f) * definition.degreesBetweenProjectiles;
             float yaw = fan + RollScatter(spread);
 
-            Shot.Launch(Fanned(curve, yaw), body, definition.hittableLayers, damage,
+            Shot.Launch(Fanned(curve, yaw), body, aim.HittableLayers, damage,
                         AddedBlastRadius, definition.projectile, effects, PierceCount,
                         definition.knockbackDistance);
         }
@@ -161,7 +161,7 @@ public class ArrowShot : Ability
             Curve = curve,
             SpreadDegrees = Mathf.Max(0.0f, definition.spreadDegrees),
             SweepRadius = Mathf.Max(definition.projectile.size.x, definition.projectile.size.y) * 0.5f,
-            SweepLayers = aim.SweepLayers(definition.hittableLayers),
+            SweepLayers = aim.SweepLayers,
             Duration = GetPreviewDuration(curve),
             Charge = charge
         };

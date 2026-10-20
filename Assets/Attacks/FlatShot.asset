@@ -19,9 +19,6 @@ MonoBehaviour:
   indicatorPrefab: {fileID: 0}
   icon: {fileID: 21300000, guid: ede36ed7df9a41347b5f43facfcd8660, type: 3}
   turnDuration: 0.12
-  hittableLayers:
-    serializedVersion: 2
-    m_Bits: 1993
   attackDuration: 1
   spreadDegrees: 0
   degreesBetweenProjectiles: 9
